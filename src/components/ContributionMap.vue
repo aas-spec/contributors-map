@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div class="shadow w-75 ml-auto mr-auto mt-0 rounded p-3">
+  <div class="shadow w-75 ml-auto mr-auto mt-0 rounded p-3 view-container">
       <h4 class="text-center mb-5">Получение Contribution Map</h4>
       <div class="form-row">
           <label>Имя пользователя Github</label>
@@ -13,9 +13,9 @@
   </div>
     <br/>
     <pre
-        style="height: 40vh;overflow-y: auto "
+        style="height: 40vh;overflow-y: auto;"
         v-if="resultText !== ''"
-        class="ml-auto mr-auto w-75 p-2 text-left small alert alert-success"
+        class="ml-auto mr-auto w-75 p-2 text-left small alert alert-success view-container"
     >{{resultText}}</pre>
     <div v-if="errorText !== ''" class="alert alert-danger">{{errorText}}</div>
   </div>
@@ -51,5 +51,10 @@ name: "ContributionMap",
 </script>
 
 <style scoped>
+
+.view-container {
+  max-width: 600px;
+  min-width: 320px;
+}
 
 </style>
