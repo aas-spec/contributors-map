@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <contribution-map/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ContributionMap from "@/components/ContributionMap";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ContributionMap,
   }
 }
 </script>
