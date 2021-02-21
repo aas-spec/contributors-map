@@ -1,8 +1,9 @@
 module.exports = {
+    publicPath: '/contribution-map/',
     devServer: {
         proxy: {
             "^/api/": {
-                target: "http://127.0.0.1:3300",
+                target: "https://snt-lk.herokuapp.com",
                 changeOrigin: true,
             }
         }
