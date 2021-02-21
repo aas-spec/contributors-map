@@ -1,5 +1,6 @@
 <template>
-  <div class="shadow w-75 ml-auto mr-auto mt-5 rounded p-5">
+  <div>
+  <div class="shadow w-75 ml-auto mr-auto mt-0 rounded p-3">
       <h4 class="text-center mb-5">Получение Contribution Map</h4>
       <div class="form-row">
           <label>Имя пользователя Github</label>
@@ -9,9 +10,14 @@
     <div class="modal-footer">
           <button class="btn btn-primary" @click="getData">Получить</button>
       </div>
-    <pre  v-if="resultText !== ''" class=" text-left small alert alert-success">{{resultText}}</pre>
-    <div v-if="errorText !== ''" class="alert alert-danger">{{resultText}}</div>
-
+  </div>
+    <br/>
+    <pre
+        style="height: 40vh;overflow-y: auto "
+        v-if="resultText !== ''"
+        class="ml-auto mr-auto w-75 p-2 text-left small alert alert-success"
+    >{{resultText}}</pre>
+    <div v-if="errorText !== ''" class="alert alert-danger">{{errorText}}</div>
   </div>
 </template>
 
@@ -36,6 +42,7 @@ name: "ContributionMap",
           this.resultText = JSON.stringify(resp.data, null, 4);
         })
         .catch( err => {
+          console.log(err)
           this.errorText = err;
         });
     }
